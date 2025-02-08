@@ -3,48 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tips dan Trik</title>
+    <title>Beranda - Tips & Artikel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Tips & Trik Sehari-hari</h1>
+        <div class="navbar">
+            <h1>Selamat Datang di Tips & Artikel</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="post1.html">Tips Produktivitas</a></li>
+                    <li><a href="post2.html">Tips Sehat Setiap Hari</a></li>
+                    <li><a href="post3.html">Mengelola Keuangan</a></li>
+                    <li><a href="post4.html">Memasak Mudah</a></li>
+                    <li><a href="post5.html">Belajar Efektif</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="post">
-            <h2>Tips Produktivitas</h2>
-            <p>Bagaimana cara meningkatkan produktivitas tanpa stres? Berikut beberapa langkah...</p>
-            <a href="post1.html" class="read-more">Baca Selengkapnya</a>
+        <!-- Carousel Section -->
+        <section class="carousel">
+            <div class="carousel-slide">
+                <img src="carousel1.jpg" alt="Slide 1">
+                <img src="carousel2.jpg" alt="Slide 2">
+                <img src="carousel3.jpg" alt="Slide 3">
+            </div>
         </section>
 
-        <section class="post">
-            <h2>Tips Sehat Setiap Hari</h2>
-            <p>Kesehatan adalah aset utama. Inilah beberapa kebiasaan sehat yang bisa dilakukan...</p>
-            <a href="post2.html" class="read-more">Baca Selengkapnya</a>
+        <!-- Search Bar -->
+        <section class="search-bar">
+            <input type="text" placeholder="Cari artikel..." id="search-input">
+            <button onclick="searchArticle()">Cari</button>
         </section>
 
-        <section class="post">
-            <h2>Tips Mengelola Keuangan</h2>
-            <p>Hemat bukan berarti pelit. Yuk, simak cara mengatur keuangan dengan bijak...</p>
-            <a href="post3.html" class="read-more">Baca Selengkapnya</a>
-        </section>
+        <!-- Featured Posts -->
+        <section class="featured-posts">
+            <h2>Artikel Pilihan</h2>
+            <div class="post-preview">
+                <h3><a href="post1.html">Tips Produktivitas: Meningkatkan Fokus Tanpa Stres</a></h3>
+                <p>Pelajari cara meningkatkan produktivitas sehari-hari dengan tips sederhana yang bisa membantu Anda mencapai lebih banyak tanpa merasa tertekan...</p>
+            </div>
 
-        <section class="post">
-            <h2>Tips Memasak Mudah</h2>
-            <p>Ingin masak enak tapi tidak mau repot? Berikut beberapa resep simpel...</p>
-            <a href="post4.html" class="read-more">Baca Selengkapnya</a>
-        </section>
+            <div class="post-preview">
+                <h3><a href="post2.html">Tips Sehat Setiap Hari: Menjaga Kesehatan Tubuh dan Pikiran</a></h3>
+                <p>Mulailah rutinitas sehat setiap hari dengan kebiasaan yang mudah diikuti untuk menjaga kesehatan tubuh dan pikiran Anda tetap optimal...</p>
+            </div>
 
-        <section class="post">
-            <h2>Tips Belajar Efektif</h2>
-            <p>Belajar lebih cepat dan efektif bisa dilakukan dengan strategi ini...</p>
-            <a href="post5.html" class="read-more">Baca Selengkapnya</a>
+            <div class="post-preview">
+                <h3><a href="post3.html">Tips Mengelola Keuangan: Langkah Awal untuk Kebebasan Finansial</a></h3>
+                <p>Belajar cara mengelola keuangan dengan bijak untuk mencapai tujuan finansial Anda. Simak tips praktis yang bisa langsung diterapkan...</p>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>© 2025 Geci - All Rights Reserved</p>
     </footer>
+
+    <script>
+        // Carousel functionality
+        let index = 0;
+        const slides = document.querySelectorAll('.carousel-slide img');
+        const totalSlides = slides.length;
+
+        function changeSlide() {
+            slides.forEach(slide => slide.style.display = 'none');
+            index = (index + 1) % totalSlides;
+            slides[index].style.display = 'block';
+        }
+
+        setInterval(changeSlide, 3000);
+
+        // Search functionality
+        function searchArticle() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const posts = document.querySelectorAll('.post-preview');
+            posts.forEach(post => {
+                const title = post.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize carousel
+        changeSlide();
+    </script>
 </body>
 </html>
