@@ -3,76 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Tips & Artikel</title>
+    <title>Tips & Artikel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="navbar">
-            <h1>Selamat Datang di Tips & Artikel</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="post1.html">Tips Produktivitas</a></li>
-                    <li><a href="post2.html">Tips Sehat Setiap Hari</a></li>
-                    <li><a href="post3.html">Mengelola Keuangan</a></li>
-                    <li><a href="post4.html">Memasak Mudah</a></li>
-                    <li><a href="post5.html">Belajar Efektif</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Tips & Artikel</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="post1.html">Produktivitas</a></li>
+                <li><a href="post2.html">Kesehatan</a></li>
+                <li><a href="post3.html">Keuangan</a></li>
+                <li><a href="post4.html">Memasak</a></li>
+                <li><a href="post5.html">Belajar</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <!-- Carousel Section -->
-        <section class="carousel">
-            <div class="carousel-slide">
-                <img src="carousel1.jpg" alt="Slide 1">
-                <img src="carousel2.jpg" alt="Slide 2">
-                <img src="carousel3.jpg" alt="Slide 3">
-            </div>
-        </section>
-
-        <!-- Featured Posts -->
-        <section class="featured-posts">
+        <section class="featured">
             <h2>Artikel Pilihan</h2>
-            <div class="post-preview">
-                <h3><a href="post1.html">Tips Produktivitas: Meningkatkan Fokus Tanpa Stres</a></h3>
-                <p>Pelajari cara meningkatkan produktivitas sehari-hari dengan tips sederhana yang bisa membantu Anda mencapai lebih banyak tanpa merasa tertekan...</p>
-            </div>
-
-            <div class="post-preview">
-                <h3><a href="post2.html">Tips Sehat Setiap Hari: Menjaga Kesehatan Tubuh dan Pikiran</a></h3>
-                <p>Mulailah rutinitas sehat setiap hari dengan kebiasaan yang mudah diikuti untuk menjaga kesehatan tubuh dan pikiran Anda tetap optimal...</p>
-            </div>
-
-            <div class="post-preview">
-                <h3><a href="post3.html">Tips Mengelola Keuangan: Langkah Awal untuk Kebebasan Finansial</a></h3>
-                <p>Belajar cara mengelola keuangan dengan bijak untuk mencapai tujuan finansial Anda. Simak tips praktis yang bisa langsung diterapkan...</p>
-            </div>
+            <article>
+                <h3><a href="post1.html">Meningkatkan Produktivitas</a></h3>
+                <p>Tips untuk tetap fokus dan efisien dalam bekerja dan belajar...</p>
+            </article>
+            <article>
+                <h3><a href="post2.html">Menjaga Kesehatan Setiap Hari</a></h3>
+                <p>Kebiasaan sehat sederhana yang bisa Anda lakukan setiap hari...</p>
+            </article>
+            <article>
+                <h3><a href="post3.html">Mengelola Keuangan dengan Bijak</a></h3>
+                <p>Langkah-langkah mudah untuk mengatur keuangan Anda...</p>
+            </article>
         </section>
     </main>
 
     <footer>
         <p>© 2025 Geci - All Rights Reserved</p>
     </footer>
-
-    <script>
-        // Carousel functionality
-        let index = 0;
-        const slides = document.querySelectorAll('.carousel-slide img');
-        const totalSlides = slides.length;
-
-        function changeSlide() {
-            slides.forEach(slide => slide.style.display = 'none');
-            index = (index + 1) % totalSlides;
-            slides[index].style.display = 'block';
-        }
-
-        setInterval(changeSlide, 3000);
-
-        // Initialize carousel
-        changeSlide();
-    </script>
 </body>
 </html>
