@@ -33,12 +33,6 @@
             </div>
         </section>
 
-        <!-- Search Bar -->
-        <section class="search-bar">
-            <input type="text" placeholder="Cari artikel..." id="search-input">
-            <button onclick="searchArticle()">Cari</button>
-        </section>
-
         <!-- Featured Posts -->
         <section class="featured-posts">
             <h2>Artikel Pilihan</h2>
@@ -76,20 +70,6 @@
         }
 
         setInterval(changeSlide, 3000);
-
-        // Search functionality
-        function searchArticle() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const posts = document.querySelectorAll('.post-preview');
-            posts.forEach(post => {
-                const title = post.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    post.style.display = 'block';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
-        }
 
         // Initialize carousel
         changeSlide();
