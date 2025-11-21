@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WapBlog - Ringkas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌿 WapBlog</h1>
+    <div>
+      <button id="loginBtn">🔐 Admin</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ADMIN FORM (hidden until login) -->
+    <section id="postForm" class="hidden card">
+      <h2>Buat Postingan (Admin)</h2>
+      <input id="judul" placeholder="Judul..." />
+      <input id="thumbnail" placeholder="URL thumbnail (opsional)" />
+      <textarea id="isi" rows="5" placeholder="Ringkasan / isi lengkap..."></textarea>
+      <input id="penulis" placeholder="Nama penulis..." />
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button id="kirim">Kirim</button>
+        <button id="batal" class="muted">Batal</button>
+      </div>
+    </section>
+
+    <!-- POSTS -->
+    <section id="postList">
+      <h2 style="margin-bottom:12px;">Daftar Postingan</h2>
+      <div id="posts"></div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+  </main>
+
+  <!-- Read Modal -->
+  <div id="modalRead" class="hidden overlay">
+    <article class="modal-content card read-modal">
+      <h2 id="modalReadTitle"></h2>
+      <div class="meta" id="modalReadMeta"></div>
+      <img id="modalReadThumb" class="modal-thumb hidden" alt="thumbnail"/>
+      <div id="modalReadBody" style="white-space:pre-wrap;margin-top:12px;"></div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end;">
+        <button id="closeRead">Tutup</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- Edit Modal (fade in) -->
+  <div id="modalEdit" class="hidden overlay">
+    <article class="modal-content card edit-modal">
+      <h3>Edit Postingan</h3>
+      <input id="editJudul" placeholder="Judul" />
+      <input id="editThumbnail" placeholder="URL thumbnail (opsional)" />
+      <textarea id="editIsi" rows="6" placeholder="Isi"></textarea>
+      <input id="editPenulis" placeholder="Nama penulis" />
+      <div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end;">
+        <button id="saveEdit">Simpan Perubahan</button>
+        <button id="cancelEdit" class="muted">Batal</button>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    <div class="credit">© wakied imam</div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
